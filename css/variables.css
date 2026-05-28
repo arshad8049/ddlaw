@@ -1,0 +1,200 @@
+/* ============================================================
+   DD LAW SOCIETY — DESIGN TOKENS
+   variables.css
+   All CSS custom properties for the entire site.
+   Import this first in every HTML file.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap');
+
+:root {
+
+  /* ── COLORS ────────────────────────────────────────────── */
+
+  /* Backgrounds */
+  --color-bg:           #F5F0E8;   /* warm ivory — page canvas       */
+  --color-surface:      #FDFAF4;   /* near-white — cards, panels     */
+  --color-surface-alt:  #EDE8DC;   /* darker ivory — alternate rows  */
+
+  /* Ink */
+  --color-ink:          #0D0D0D;   /* near-black — primary text      */
+  --color-ink-muted:    #4A4A45;   /* warm grey — secondary text     */
+  --color-ink-faint:    #8A867A;   /* light grey — captions, labels  */
+
+  /* Accent — Antique Gold */
+  --color-accent:       #C9A84C;   /* primary accent                 */
+  --color-accent-dark:  #8B6914;   /* hover / pressed state          */
+  --color-accent-light: #E8D89A;   /* tint — backgrounds             */
+
+  /* Structure */
+  --color-charcoal:     #1A1A18;   /* navbar, footer, dark sections  */
+  --color-charcoal-mid: #2E2E2A;   /* dark surface variant           */
+  --color-rule:         #DDD5C0;   /* divider lines                  */
+  --color-rule-dark:    #3A3A35;   /* dividers on dark bg            */
+
+  /* Feedback */
+  --color-success:      #4A7C59;
+  --color-error:        #A03A2E;
+
+  /* ── TYPOGRAPHY ────────────────────────────────────────── */
+
+  --font-display:  'Cormorant Garamond', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+
+  /* Scale (fluid via clamp) */
+  --text-xs:    clamp(0.688rem, 0.65rem + 0.19vw,  0.75rem);
+  --text-sm:    clamp(0.813rem, 0.77rem + 0.22vw,  0.875rem);
+  --text-base:  clamp(0.938rem, 0.88rem + 0.28vw,  1rem);
+  --text-md:    clamp(1rem,     0.94rem + 0.31vw,  1.125rem);
+  --text-lg:    clamp(1.125rem, 1.05rem + 0.38vw,  1.25rem);
+  --text-xl:    clamp(1.25rem,  1.15rem + 0.5vw,   1.5rem);
+  --text-2xl:   clamp(1.5rem,   1.35rem + 0.75vw,  2rem);
+  --text-3xl:   clamp(2rem,     1.75rem + 1.25vw,  2.75rem);
+  --text-4xl:   clamp(2.75rem,  2.25rem + 2.5vw,   4rem);
+  --text-hero:  clamp(3.5rem,   2.75rem + 3.75vw,  6rem);
+
+  /* Line heights */
+  --leading-tight:  1.15;
+  --leading-snug:   1.3;
+  --leading-normal: 1.6;
+  --leading-loose:  1.85;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.12em;
+  --tracking-widest:  0.2em;
+
+  /* Font weights */
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* ── SPACING ────────────────────────────────────────────── */
+
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+  --space-40:  10rem;     /* 160px */
+
+  /* Section padding */
+  --section-py: clamp(4rem, 8vw, 8rem);
+  --section-px: clamp(1.5rem, 6vw, 6rem);
+
+  /* ── LAYOUT ─────────────────────────────────────────────── */
+
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg:  1024px;
+  --container-xl:  1200px;
+  --container-2xl: 1440px;
+
+  --navbar-h:      72px;
+  --navbar-h-sm:   60px;
+
+  /* ── BORDERS & RADII ────────────────────────────────────── */
+
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  --border-thin:   1px solid var(--color-rule);
+  --border-accent: 1px solid var(--color-accent);
+  --border-dark:   1px solid var(--color-rule-dark);
+
+  /* ── SHADOWS ────────────────────────────────────────────── */
+
+  --shadow-sm:
+    0 1px 3px rgba(13, 13, 13, 0.06),
+    0 1px 2px rgba(13, 13, 13, 0.04);
+
+  --shadow-md:
+    0 4px 12px rgba(13, 13, 13, 0.08),
+    0 2px 6px  rgba(13, 13, 13, 0.05);
+
+  --shadow-lg:
+    0 12px 32px rgba(13, 13, 13, 0.1),
+    0 4px  12px rgba(13, 13, 13, 0.07);
+
+  --shadow-xl:
+    0 24px 64px rgba(13, 13, 13, 0.12),
+    0 8px  24px rgba(13, 13, 13, 0.08);
+
+  --shadow-gold:
+    0 8px 32px rgba(201, 168, 76, 0.2),
+    0 2px  8px rgba(201, 168, 76, 0.12);
+
+  --shadow-inset:
+    inset 0 2px 8px rgba(13, 13, 13, 0.06);
+
+  /* ── TRANSITIONS ────────────────────────────────────────── */
+
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-sharp:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --duration-fast:   150ms;
+  --duration-base:   250ms;
+  --duration-slow:   400ms;
+  --duration-slower: 600ms;
+  --duration-reveal: 800ms;
+
+  --transition-base:   all var(--duration-base) var(--ease-out);
+  --transition-color:  color var(--duration-base) var(--ease-out),
+                       background-color var(--duration-base) var(--ease-out),
+                       border-color var(--duration-base) var(--ease-out);
+  --transition-transform: transform var(--duration-slow) var(--ease-out);
+
+  /* ── Z-INDEX SCALE ──────────────────────────────────────── */
+
+  --z-below:   -1;
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+
+  /* ── DECORATIVE ─────────────────────────────────────────── */
+
+  /* Gold ornament line used across sections */
+  --ornament-line: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-accent) 30%,
+    var(--color-accent) 70%,
+    transparent 100%
+  );
+
+  /* Subtle noise texture overlay for premium feel */
+  --texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ── DARK SECTION OVERRIDES ─────────────────────────────────
+   Apply .dark-section to any <section> that uses charcoal bg.
+   All tokens stay consistent; only surface values flip.
+   ──────────────────────────────────────────────────────────── */
+.dark-section {
+  --color-bg:       var(--color-charcoal);
+  --color-surface:  var(--color-charcoal-mid);
+  --color-ink:      #F5F0E8;
+  --color-ink-muted:#C8BFA8;
+  --color-rule:     var(--color-rule-dark);
+}

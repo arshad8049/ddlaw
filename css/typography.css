@@ -1,0 +1,376 @@
+/* ============================================================
+   DD LAW SOCIETY — TYPOGRAPHY
+   typography.css
+   All type styles: headings, body, labels, quotes, ornaments.
+   Depends on: variables.css
+   ============================================================ */
+
+/* ── BASE BODY TEXT ──────────────────────────────────────── */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-ink-muted);
+}
+
+/* ── DISPLAY HEADINGS (Cormorant Garamond) ───────────────── */
+
+.display-1 {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--fw-light);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+}
+
+.display-2 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--fw-light);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+}
+
+/* ── SEMANTIC HEADINGS ───────────────────────────────────── */
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--fw-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--fw-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--fw-medium);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+}
+
+h4, .h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-medium);
+  line-height: var(--leading-snug);
+  letter-spacing: 0;
+  color: var(--color-ink);
+}
+
+h5, .h5 {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: 0;
+  color: var(--color-ink);
+}
+
+h6, .h6 {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: var(--fw-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-ink);
+}
+
+/* ── BODY TEXT VARIANTS ──────────────────────────────────── */
+
+.text-lead {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-light);
+  line-height: var(--leading-loose);
+  letter-spacing: 0.01em;
+  color: var(--color-ink-muted);
+  font-style: italic;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-ink-muted);
+}
+
+.text-body-lg {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: var(--fw-regular);
+  line-height: var(--leading-loose);
+  color: var(--color-ink-muted);
+}
+
+.text-body-sm {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-ink-muted);
+}
+
+/* ── LABELS & EYEBROWS ───────────────────────────────────── */
+
+/* Small uppercase label above section headings */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+/* Eyebrow with gold left-bar accent */
+.eyebrow--ruled {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.eyebrow--ruled::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ── SECTION HEADING BLOCK ───────────────────────────────── */
+
+/* Wrapper pattern: eyebrow + h2 + optional lead */
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.section-heading--center {
+  align-items: center;
+  text-align: center;
+}
+
+.section-heading--center p {
+  margin-inline: auto;
+}
+
+/* ── ORNAMENTAL DIVIDER ──────────────────────────────────── */
+
+/* Decorative centered ornament used between sections */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-block: var(--space-8);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wider);
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  max-width: 120px;
+  background: var(--ornament-line);
+}
+
+/* ── GOLD HIGHLIGHT ──────────────────────────────────────── */
+
+/* Wrap key words in <em class="gold"> for accent color */
+.gold,
+em.gold {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* ── BLOCKQUOTE ──────────────────────────────────────────── */
+
+blockquote {
+  position: relative;
+  padding: var(--space-8) var(--space-10);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+blockquote p {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-light);
+  font-style: italic;
+  line-height: var(--leading-loose);
+  color: var(--color-ink);
+  max-width: none;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-style: normal;
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Opening quote mark */
+blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-5);
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-accent);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* ── INLINE CODE / LEGAL REFERENCE ──────────────────────── */
+
+code,
+.legal-ref {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875em;
+  background: var(--color-surface-alt);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-sm);
+  border: var(--border-thin);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+/* ── LINKS IN BODY COPY ──────────────────────────────────── */
+
+.prose a {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-light);
+  text-underline-offset: 3px;
+  transition: var(--transition-color);
+}
+
+.prose a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+/* ── PROSE BLOCK (long-form copy) ────────────────────────── */
+
+.prose {
+  max-width: 70ch;
+  line-height: var(--leading-loose);
+}
+
+.prose > * + * {
+  margin-top: var(--space-6);
+}
+
+.prose h2 { margin-top: var(--space-12); }
+.prose h3 { margin-top: var(--space-10); }
+
+.prose ul,
+.prose ol {
+  padding-left: var(--space-6);
+}
+
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+
+.prose li {
+  margin-top: var(--space-2);
+  color: var(--color-ink-muted);
+  line-height: var(--leading-loose);
+}
+
+.prose li::marker {
+  color: var(--color-accent);
+}
+
+/* ── DARK SECTION OVERRIDES ──────────────────────────────── */
+
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section h4,
+.dark-section h5,
+.dark-section h6,
+.dark-section .h1,
+.dark-section .h2,
+.dark-section .h3,
+.dark-section .h4 {
+  color: var(--color-surface);
+}
+
+.dark-section p,
+.dark-section .text-body,
+.dark-section .text-lead {
+  color: var(--color-ink-muted);
+}
+
+.dark-section .eyebrow,
+.dark-section .eyebrow--ruled {
+  color: var(--color-accent);
+}
+
+.dark-section .eyebrow--ruled::before {
+  background: var(--color-accent);
+}
+
+.dark-section blockquote {
+  background: var(--color-charcoal-mid);
+}
+
+.dark-section blockquote p {
+  color: var(--color-surface);
+}
+
+/* ── RESPONSIVE ADJUSTMENTS ──────────────────────────────── */
+
+@media (max-width: 640px) {
+  .ornament::before,
+  .ornament::after {
+    max-width: 60px;
+  }
+
+  blockquote {
+    padding: var(--space-6) var(--space-6);
+  }
+
+  blockquote::before {
+    font-size: 3.5rem;
+  }
+}

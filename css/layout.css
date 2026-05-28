@@ -1,0 +1,371 @@
+/* ============================================================
+   DD LAW SOCIETY — LAYOUT
+   layout.css
+   Containers, grids, section wrappers, page skeleton,
+   and spacing utility classes.
+   Depends on: variables.css, reset.css
+   ============================================================ */
+
+/* ── PAGE SKELETON ───────────────────────────────────────── */
+
+html, body {
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+main {
+  flex: 1;
+  padding-top: var(--navbar-h);   /* offset for fixed navbar */
+}
+
+/* ── CONTAINERS ──────────────────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--section-px);
+}
+
+.container--sm {
+  max-width: var(--container-sm);
+  margin-inline: auto;
+  padding-inline: var(--section-px);
+}
+
+.container--md {
+  max-width: var(--container-md);
+  margin-inline: auto;
+  padding-inline: var(--section-px);
+}
+
+.container--lg {
+  max-width: var(--container-lg);
+  margin-inline: auto;
+  padding-inline: var(--section-px);
+}
+
+.container--2xl {
+  max-width: var(--container-2xl);
+  margin-inline: auto;
+  padding-inline: var(--section-px);
+}
+
+/* Full bleed — no horizontal padding */
+.container--flush {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+}
+
+/* ── SECTION WRAPPER ─────────────────────────────────────── */
+
+.section {
+  padding-block: var(--section-py);
+  position: relative;
+  overflow: hidden;
+}
+
+.section--sm {
+  padding-block: calc(var(--section-py) * 0.6);
+}
+
+.section--lg {
+  padding-block: calc(var(--section-py) * 1.4);
+}
+
+/* Ivory background (default) */
+.section--ivory {
+  background-color: var(--color-bg);
+}
+
+/* Slightly lighter surface */
+.section--surface {
+  background-color: var(--color-surface);
+}
+
+/* Alternate ivory — zebra stripe for adjacent sections */
+.section--alt {
+  background-color: var(--color-surface-alt);
+}
+
+/* Dark charcoal — used for CTA, footer-adjacent strips */
+.section--dark {
+  background-color: var(--color-charcoal);
+}
+
+/* ── GRID SYSTEMS ────────────────────────────────────────── */
+
+/* Auto-fit grid — equal columns, min 280px */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+.grid-auto--sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Named column grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+/* Asymmetric content + sidebar layout */
+.grid-aside {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.grid-aside--left {
+  grid-template-columns: 360px 1fr;
+}
+
+/* Hero split — 55/45 */
+.grid-hero {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: var(--space-16);
+  align-items: center;
+  min-height: calc(100dvh - var(--navbar-h));
+}
+
+/* ── FLEX UTILITIES ──────────────────────────────────────── */
+
+.flex         { display: flex; }
+.flex-col     { display: flex; flex-direction: column; }
+.flex-wrap    { flex-wrap: wrap; }
+.items-start  { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end    { align-items: flex-end; }
+.justify-start   { justify-content: flex-start; }
+.justify-center  { justify-content: center; }
+.justify-end     { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.gap-2  { gap: var(--space-2); }
+.gap-4  { gap: var(--space-4); }
+.gap-6  { gap: var(--space-6); }
+.gap-8  { gap: var(--space-8); }
+.gap-12 { gap: var(--space-12); }
+
+/* ── SPACING UTILITIES ───────────────────────────────────── */
+
+/* Margin top */
+.mt-4  { margin-top: var(--space-4); }
+.mt-6  { margin-top: var(--space-6); }
+.mt-8  { margin-top: var(--space-8); }
+.mt-12 { margin-top: var(--space-12); }
+.mt-16 { margin-top: var(--space-16); }
+.mt-20 { margin-top: var(--space-20); }
+
+/* Margin bottom */
+.mb-4  { margin-bottom: var(--space-4); }
+.mb-6  { margin-bottom: var(--space-6); }
+.mb-8  { margin-bottom: var(--space-8); }
+.mb-12 { margin-bottom: var(--space-12); }
+.mb-16 { margin-bottom: var(--space-16); }
+
+/* Padding */
+.py-8  { padding-block: var(--space-8); }
+.py-12 { padding-block: var(--space-12); }
+.py-16 { padding-block: var(--space-16); }
+.px-6  { padding-inline: var(--space-6); }
+.px-8  { padding-inline: var(--space-8); }
+
+/* ── TEXT ALIGNMENT ──────────────────────────────────────── */
+
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+/* ── DISPLAY UTILITIES ───────────────────────────────────── */
+
+.hidden       { display: none !important; }
+.block        { display: block; }
+.inline-block { display: inline-block; }
+.relative     { position: relative; }
+.absolute     { position: absolute; }
+.overflow-hidden { overflow: hidden; }
+.w-full       { width: 100%; }
+.h-full       { height: 100%; }
+.mx-auto      { margin-inline: auto; }
+
+/* ── DIVIDER RULE ────────────────────────────────────────── */
+
+.rule {
+  width: 100%;
+  height: 1px;
+  background: var(--color-rule);
+  border: none;
+  margin-block: var(--space-12);
+}
+
+.rule--accent {
+  height: 2px;
+  width: 60px;
+  background: var(--color-accent);
+  margin-block: var(--space-6);
+}
+
+.rule--accent-center {
+  height: 2px;
+  width: 60px;
+  background: var(--color-accent);
+  margin-block: var(--space-6);
+  margin-inline: auto;
+}
+
+/* ── STICKY SIDEBAR ──────────────────────────────────────── */
+
+.sticky-top {
+  position: sticky;
+  top: calc(var(--navbar-h) + var(--space-8));
+}
+
+/* ── ASPECT RATIOS ───────────────────────────────────────── */
+
+.aspect-square    { aspect-ratio: 1 / 1; }
+.aspect-video     { aspect-ratio: 16 / 9; }
+.aspect-portrait  { aspect-ratio: 3 / 4; }
+.aspect-landscape { aspect-ratio: 4 / 3; }
+
+/* ── OBJECT FIT ──────────────────────────────────────────── */
+
+.object-cover   { object-fit: cover; object-position: center; }
+.object-contain { object-fit: contain; }
+.object-top     { object-position: top; }
+
+/* ── DECORATIVE BACKGROUND TEXTURE ──────────────────────── */
+
+/* Subtle grain overlay — apply to any section for premium feel */
+.texture-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--texture-noise);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: var(--z-raised);
+}
+
+/* ── GOLD CORNER ACCENT ──────────────────────────────────── */
+
+/* Decorative top-left gold bracket on featured panels */
+.corner-accent {
+  position: relative;
+}
+
+.corner-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color-accent);
+  pointer-events: none;
+  z-index: var(--z-raised);
+}
+
+/* ── RESPONSIVE BREAKPOINTS ──────────────────────────────── */
+
+/* ≥ 1280px — xl */
+@media (max-width: 1280px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-hero {
+    gap: var(--space-10);
+  }
+}
+
+/* ≥ 1024px — lg */
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-aside,
+  .grid-aside--left {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-hero {
+    grid-template-columns: 1fr;
+    min-height: unset;
+    padding-block: var(--space-20);
+  }
+}
+
+/* ≥ 768px — md */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide desktop-only elements */
+  .hide-mobile { display: none !important; }
+}
+
+/* ≥ 640px — sm */
+@media (max-width: 640px) {
+  .container,
+  .container--lg,
+  .container--md,
+  .container--sm,
+  .container--2xl {
+    padding-inline: var(--space-5);
+  }
+
+  .section {
+    padding-block: calc(var(--section-py) * 0.7);
+  }
+
+  /* Hide tablet-only elements */
+  .hide-tablet { display: none !important; }
+}
+
+/* Show only on mobile */
+.show-mobile {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .show-mobile {
+    display: block !important;
+  }
+}
